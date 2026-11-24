@@ -1,0 +1,22 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.example.webtoonreader'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId 'com.example.webtoonreader'
+        minSdk 16          // Android 4.1 Jelly Bean
+        targetSdk 22       // keeps install-time storage permission, no scoped storage
+        versionCode 1
+        versionName '1.0'
+    }
+    buildTypes {
+        release { minifyEnabled false }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+// No third-party dependencies on purpose: smallest APK, fastest start on old devices.
